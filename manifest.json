@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "description":  "Log hours with Toggl.com and put them in Naviwep",
+    "name":         "NaviToggl",
+    "version":      "0.5",
+        "icons": { 
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png" 
+    },
+
+    "browser_action": {
+        "default_icon": "images/icon128.png",
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": [ {
+        "exclude_globs":    [ "*-sublime" ],
+        "include_globs":    [ "*" ],
+        "js":               [ "js/popup.js", "js/NaviToggl.js" ],
+        "matches":          [   "https://naviwep.steria.no/*"],
+        "run_at": "document_end"
+    }],
+
+    "permissions": [
+    "storage",
+    "https://www.toggl.com/api/v8/*",
+    "https://toggl.com/reports/api/v2/weekly"
+    ],
+
+    "converted_from_user_script": true
+}
