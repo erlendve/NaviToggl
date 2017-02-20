@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "description":  "Log hours with Toggl.com and put them in Naviwep",
     "name":         "NaviToggl",
-    "version":      "0.5",
+    "version":      "0.6",
         "icons": { 
         "32": "images/icon32.png",
         "48": "images/icon48.png",

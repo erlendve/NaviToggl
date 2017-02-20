@@ -1,3 +1,6 @@
+function getProjectRows() {
+    return document.querySelectorAll("tr.rgRow, tr.rgAltRow");
+}
 (function () {
 	if (!String.prototype.contains) {
 		String.prototype.contains = function() {
@@ -432,7 +435,7 @@
 					return newButton;
 				}
 
-				var tr = document.querySelectorAll("tr.rgEditRow");
+				var tr = getProjectRows()
 				for (var i = tr.length - 1; i >= 0; i--) {
 					append(tr[i].children[5], getNewAddButton(tr[i]));
 				};
@@ -516,7 +519,7 @@
 				var projectName = project.title.project;
 				var clientName = project.title.client;
 				var hours = project.totals;
-				var tr = document.querySelectorAll("tr.rgEditRow");
+				var tr = getProjectRows();
 				var projectRowIndex = -1;
 				for (var i = tr.length - 1; i >= 0; i--) {
 					var projectText = tr[i].children[2].innerText + " -- " + tr[i].children[4].innerText;
@@ -543,7 +546,7 @@
 				}
 			},
 			hideAddToTogglButton: function(projectName, colorCode) {
-				var tr = document.querySelectorAll("tr.rgEditRow");
+				var tr = getProjectRows();
 				for (var i = tr.length - 1; i >= 0; i--) {
 					var projectText = tr[i].children[2].innerText + " -- " + tr[i].children[4].innerText;
 					if (projectName == projectText) {
